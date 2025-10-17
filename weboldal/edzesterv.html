@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitZone — Edzéstervek</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold">FitZone</h1>
+      <nav class="space-x-4 hidden md:block">
+        <a href="index.html" class="hover:underline">Kezdőlap</a>
+        <a href="rolunk.html" class="hover:underline">Rólunk</a>
+        <a href="kalkulatorok.html" class="hover:underline">Kalkulátorok</a>
+        <a href="edzesterv.html" class="hover:underline">Edzéstervek</a>
+        <a href="kapcsolat.html" class="hover:underline">Kapcsolat</a>
+      </nav>
+      <button id="menuBtn4" class="md:hidden px-3 py-2 bg-white bg-opacity-10 rounded">Menü</button>
+    </div>
+    <div id="mobileMenu4" class="md:hidden hidden bg-blue-700">
+      <div class="p-4 space-y-2">
+        <a href="index.html" class="block">Kezdőlap</a>
+        <a href="rolunk.html" class="block">Rólunk</a>
+        <a href="kalkulatorok.html" class="block">Kalkulátorok</a>
+        <a href="edzesterv.html" class="block">Edzéstervek</a>
+        <a href="kapcsolat.html" class="block">Kapcsolat</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Edzésterv generátor</h2>
+
+    <div class="bg-white p-4 rounded shadow">
+      <label class="block mb-2">Válassz célodat:
+        <select id="goal" class="border p-2 w-full mt-1">
+          <option value="strength">Erőnövelés</option>
+          <option value="cardio">Állóképesség</option>
+          <option value="mix">Vegyes / Általános</option>
+        </select>
+      </label>
+      <label class="block mb-2">Hány gyakorlatot szeretnél? <input id="count" type="number" class="border p-2 w-full mt-1" value="5" min="1" max="12"></label>
+      <button onclick="generateWorkout()" class="bg-indigo-600 text-white px-3 py-2 rounded">Generálás</button>
+
+      <h3 class="mt-4 font-semibold">Javasolt edzéssor:</h3>
+      <ul id="workoutList" class="list-disc pl-5 mt-2"></ul>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t">
+    <div class="container mx-auto p-4 text-center text-sm text-slate-600">
+      © 2025 FitZone — Oktatási projekt
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
